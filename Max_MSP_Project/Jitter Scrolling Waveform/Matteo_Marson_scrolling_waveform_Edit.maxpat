@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 84.0, 1213.0, 562.0 ],
+		"rect" : [ 41.0, 84.0, 1213.0, 562.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_gl_texture", "" ],
+					"patching_rect" : [ 623.0, 507.0, 70.0, 22.0 ],
+					"text" : "jit.gl.texture"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"attr" : "name",
 					"fontface" : 0,
 					"fontname" : "Arial",
@@ -50,7 +62,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 193.728810012340546, 376.597230970859528, 150.0, 23.0 ],
+					"patching_rect" : [ 193.728810012340546, 397.376451551914215, 150.0, 23.0 ],
 					"text_width" : 70.5
 				}
 
@@ -63,7 +75,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 193.728810012340546, 408.983594536781311, 132.894737005233765, 304.748802065849304 ],
+					"patching_rect" : [ 193.728810012340546, 429.762815117835999, 132.894737005233765, 304.748802065849304 ],
 					"sync" : 1
 				}
 
@@ -75,7 +87,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 193.624655902385712, 347.096380650997162, 700.0, 22.0 ],
+					"patching_rect" : [ 193.624655902385712, 368.524951875209808, 700.0, 22.0 ],
 					"text" : "jit.gl.graph wave-ctx @circpoints 1 @line_width 1.5 @gl_color 1. 1. 1. 1. @rotatexyz 0. 0. 270. @scale 1. 0.4 1. @drawto window1"
 				}
 
