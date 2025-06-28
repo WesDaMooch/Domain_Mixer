@@ -2,12 +2,12 @@
 
 var COLOURS = {
     // Slider
-    background: [0.157, 0.157, 0.157],
-    bar: [1, 1, 1],
-    border: [1, 1, 1],
+    background: box.getattr("slidercolor"),
+    bar: box.getattr("textcolor"),
+    border: box.getattr("textcolor"),
     // Text Gradient
-    grad1: [0.157, 0.157, 0.157, 1.000],
-    grad2: [1, 1, 1, 1]
+    grad1: box.getattr("slidercolor"),
+    grad2: box.getattr("textcolor")
 };
 
 //Slider Syle
@@ -27,40 +27,46 @@ function paint() {
     var height = viewsize[1];
 
     // Fill Background
-    mgraphics.set_source_rgb(COLOURS.background);
+    mgraphics.set_source_rgba(COLOURS.background);
     mgraphics.rectangle(0, 0, width, height);
+    mgraphics.fill();
+
+    // Draw Border
+    var borderTabSize = 4.5;
+    mgraphics.set_source_rgba(COLOURS.border);
+    mgraphics.set_line_width(1);
+    mgraphics.rectangle(0.5, 0.5, width-1, height-1);  // Offset for pixel-perfect stroke
+    mgraphics.stroke();
+    mgraphics.set_source_rgba(COLOURS.background);
+    mgraphics.rectangle(borderTabSize, 0, width - (borderTabSize*2), height+1);
     mgraphics.fill();
 
     // Draw Bar
     var barSize = value * width;
-    mgraphics.set_source_rgb(COLOURS.bar);
+    mgraphics.set_source_rgba(COLOURS.bar);
     mgraphics.rectangle(0, 0, barSize, height);
     mgraphics.fill();
-
-    // Draw Border
-    mgraphics.set_source_rgb(COLOURS.border);
-    mgraphics.set_line_width(1);
-    mgraphics.rectangle(0.5, 0.5, width - 1, height - 1);  // Offset for pixel-perfect stroke
-    mgraphics.stroke();
 
     // Draw Text
     display_value = Math.pow(value, exponent);
 
-    var decimal_place = 0;
+    // Find decimal to round to
+/*    var decimal_place = 0;
     if (display_value < 0.01) {
         decimal_place = 2;
     } else if (display_value < 0.1) {
         decimal_place = 1;
-    }
+    }*/
 
+    // Alternate text for certian values
     var text = box.varname;
-    if(prev_value != value) {
+/*    if(prev_value != value) {
         if (display_value < 0.0001) {
             text = "Frozen";
-        } else { 
-            text = (100 * display_value).toFixed(decimal_place) + "%";
-        }
-    }
+        } //else { 
+            //text = (100 * display_value).toFixed(decimal_place) + "%";
+        //}
+    }*/
 
     mgraphics.select_font_face(text_font);
     mgraphics.set_font_size(text_size); 

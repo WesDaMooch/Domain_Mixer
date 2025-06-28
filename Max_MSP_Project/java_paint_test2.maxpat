@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 84.0, 815.0, 562.0 ],
+		"rect" : [ 34.0, 84.0, 818.0, 562.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,265 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"id" : "obj-15",
+					"jspainterfile" : "custom_horizontal_slider_style.js",
+					"maxclass" : "live.slider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"orientation" : 1,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 358.796342641115189, 227.402305096387863, 95.0, 18.0 ],
+					"saved_attribute_attributes" : 					{
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"slidercolor" : 						{
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"textcolor" : 						{
+							"expression" : "themecolor.live_focus_frame"
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_dial_fg"
+						}
+,
+						"valueof" : 						{
+							"parameter_initial" : [ 0.2 ],
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "Speed[4]",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "Speed",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"showname" : 0,
+					"shownumber" : 0,
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"textcolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 1.0 ],
+					"trioncolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"varname" : "Gain"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"id" : "obj-11",
+					"jspainterfile" : "custom_horizontal_slider_style.js",
+					"maxclass" : "live.slider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"orientation" : 1,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 358.009109348058701, 175.402305096387863, 95.0, 18.0 ],
+					"saved_attribute_attributes" : 					{
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"slidercolor" : 						{
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"textcolor" : 						{
+							"expression" : "themecolor.live_focus_frame"
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_dial_fg"
+						}
+,
+						"valueof" : 						{
+							"parameter_initial" : [ 1 ],
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "Speed[2]",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "Speed",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"showname" : 0,
+					"shownumber" : 0,
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"textcolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 1.0 ],
+					"trioncolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"varname" : "Speed"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"id" : "obj-12",
+					"jspainterfile" : "custom_horizontal_slider_style.js",
+					"maxclass" : "live.slider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"orientation" : 1,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 358.796342641115189, 201.402305096387863, 95.0, 18.0 ],
+					"saved_attribute_attributes" : 					{
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"slidercolor" : 						{
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"textcolor" : 						{
+							"expression" : "themecolor.live_focus_frame"
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_dial_fg"
+						}
+,
+						"valueof" : 						{
+							"parameter_initial" : [ 1 ],
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "Speed[3]",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "Speed",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"showname" : 0,
+					"shownumber" : 0,
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"textcolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 1.0 ],
+					"trioncolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"varname" : "Direction"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"id" : "obj-10",
+					"jspainterfile" : "custom_horizontal_slider_style.js",
+					"maxclass" : "live.slider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"orientation" : 1,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 358.009109348058701, 279.402305096387863, 95.0, 18.0 ],
+					"saved_attribute_attributes" : 					{
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"slidercolor" : 						{
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"textcolor" : 						{
+							"expression" : "themecolor.live_focus_frame"
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_dial_fg"
+						}
+,
+						"valueof" : 						{
+							"parameter_initial" : [ 0.5 ],
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "Speed[1]",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "Speed",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"showname" : 0,
+					"shownumber" : 0,
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"textcolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 1.0 ],
+					"trioncolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"varname" : "Zoom"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"id" : "obj-3",
+					"jspainterfile" : "bidirectional_horizontal_slider_style.js",
+					"maxclass" : "live.slider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"orientation" : 1,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 625.030384033918381, 273.709150463342667, 95.0, 18.0 ],
+					"saved_attribute_attributes" : 					{
+						"focusbordercolor" : 						{
+							"expression" : ""
+						}
+,
+						"slidercolor" : 						{
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_dial_fg"
+						}
+,
+						"valueof" : 						{
+							"parameter_initial" : [ 0.5 ],
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "Zoom",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "Zoom",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"showname" : 0,
+					"shownumber" : 0,
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"trioncolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"varname" : "Zoom1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 606.002211779356003, 238.806559890508652, 274.0, 22.0 ],
+					"text" : "jspainterfile bidirectional_horizontal_slider_style.js"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-21",
 					"maxclass" : "comment",
@@ -149,22 +408,40 @@
 , 			{
 				"box" : 				{
 					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"hint" : "",
 					"id" : "obj-16",
-					"jspainterfile" : "DIRECTION_horizontal_slider_style.js",
+					"jspainterfile" : "pointer_horizontal_slider_style.js",
 					"maxclass" : "live.slider",
+					"modulationcolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 0.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 616.004454046487808, 186.940155416727066, 103.0, 18.0 ],
+					"patching_rect" : [ 625.030384033918381, 173.772980600595474, 95.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
 						}
 ,
+						"modulationcolor" : 						{
+							"expression" : ""
+						}
+,
+						"slidercolor" : 						{
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"tricolor" : 						{
+							"expression" : ""
+						}
+,
+						"trioncolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_initial" : [ 1 ],
+							"parameter_initial" : [ 0.5 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Direction",
 							"parameter_mmax" : 1.0,
@@ -177,7 +454,10 @@
 ,
 					"showname" : 0,
 					"shownumber" : 0,
-					"varname" : "Direction"
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"tricolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 0.0 ],
+					"trioncolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"varname" : "Direction1"
 				}
 
 			}
@@ -190,8 +470,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 616.162639290094376, 134.512495130300522, 276.0, 22.0 ],
-					"text" : "jspainterfile DIRECTION_horizontal_slider_style.js"
+					"patching_rect" : [ 616.162639290094376, 134.512495130300522, 247.0, 22.0 ],
+					"text" : "jspainterfile pointer_horizontal_slider_style.js"
 				}
 
 			}
@@ -204,8 +484,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 358.009109348058701, 134.512495130300522, 251.0, 22.0 ],
-					"text" : "jspainterfile SPEED_horizontal_slider_style.js"
+					"patching_rect" : [ 301.094216138124466, 134.512495130300522, 249.0, 22.0 ],
+					"text" : "jspainterfile custom_horizontal_slider_style.js"
 				}
 
 			}
@@ -213,25 +493,33 @@
 				"box" : 				{
 					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"id" : "obj-1",
-					"jspainterfile" : "SPEED_horizontal_slider_style.js",
+					"jspainterfile" : "custom_horizontal_slider_style.js",
 					"maxclass" : "live.slider",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 358.009109348058701, 190.597252547740936, 103.0, 18.0 ],
+					"patching_rect" : [ 358.009109348058701, 253.402305096387863, 95.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
 						}
 ,
 						"slidercolor" : 						{
-							"expression" : ""
+							"expression" : "themecolor.live_value_arc_zombie"
+						}
+,
+						"textcolor" : 						{
+							"expression" : "themecolor.live_focus_frame"
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_dial_fg"
 						}
 ,
 						"valueof" : 						{
-							"parameter_initial" : [ 1 ],
+							"parameter_initial" : [ 0.5 ],
 							"parameter_initial_enable" : 1,
 							"parameter_longname" : "Speed",
 							"parameter_mmax" : 1.0,
@@ -244,7 +532,10 @@
 ,
 					"showname" : 0,
 					"shownumber" : 0,
-					"varname" : "Speed"
+					"slidercolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
+					"textcolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 1.0 ],
+					"trioncolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"varname" : "Phase"
 				}
 
 			}
@@ -254,68 +545,29 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 170.657197326421738, 109.671694457530975, 358.0, 20.0 ],
+					"patching_rect" : [ 340.00393483042717, 85.551090896129608, 358.0, 20.0 ],
 					"text" : "http://max-javascript-reference.tim-schenk.de/symbols/#gsc.tab=0"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"focusbordercolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 0.0 ],
-					"id" : "obj-24",
-					"jspainterfile" : "custom_slider.js",
-					"maxclass" : "live.slider",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "float" ],
-					"parameter_enable" : 1,
-					"patching_rect" : [ 168.009107887744904, 186.051530808210373, 34.0, 83.0 ],
-					"saved_attribute_attributes" : 					{
-						"focusbordercolor" : 						{
-							"expression" : ""
-						}
-,
-						"valueof" : 						{
-							"parameter_initial" : [ 0.5 ],
-							"parameter_initial_enable" : 1,
-							"parameter_longname" : "live.slider",
-							"parameter_mmax" : 1.0,
-							"parameter_shortname" : "live.slider",
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 1
-						}
-
-					}
-,
-					"varname" : "live.slider"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-23",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 168.009107887744904, 134.512495130300522, 158.0, 22.0 ],
-					"text" : "jspainterfile custom_slider.js"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"bgcolor" : [ 0.764705882352941, 0.764705882352941, 0.764705882352941, 1.0 ],
 					"id" : "obj-30",
 					"maxclass" : "panel",
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 157.982453435659409, 161.181965708732605, 652.27168682217598, 142.756497442722321 ],
-					"proportion" : 0.5
+					"patching_rect" : [ 157.982453435659409, 161.181965708732605, 652.27168682217598, 161.905433475971222 ],
+					"proportion" : 0.5,
+					"saved_attribute_attributes" : 					{
+						"bgfillcolor" : 						{
+							"expression" : "themecolor.live_control_zombie"
+						}
+
+					}
+
 				}
 
 			}
@@ -337,14 +589,47 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"order" : 1,
 					"source" : [ "obj-2", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-23", 0 ]
+					"destination" : [ "obj-10", 0 ],
+					"order" : 0,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"order" : 4,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"order" : 3,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"order" : 2,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -372,9 +657,13 @@
  ],
 		"parameters" : 		{
 			"obj-1" : [ "Speed", "Speed", 0 ],
+			"obj-10" : [ "Speed[1]", "Speed", 0 ],
+			"obj-11" : [ "Speed[2]", "Speed", 0 ],
+			"obj-12" : [ "Speed[3]", "Speed", 0 ],
 			"obj-13" : [ "live.slider[1]", "live.slider[1]", 0 ],
+			"obj-15" : [ "Speed[4]", "Speed", 0 ],
 			"obj-16" : [ "Direction", "Direction", 0 ],
-			"obj-24" : [ "live.slider", "live.slider", 0 ],
+			"obj-3" : [ "Zoom", "Zoom", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -388,14 +677,21 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "DIRECTION_horizontal_slider_style.js",
+				"name" : "bidirectional_horizontal_slider_style.js",
 				"bootpath" : "~/Documents/GitHub/Domain_Mixer/Max_MSP_Project",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "SPEED_horizontal_slider_style.js",
+				"name" : "custom_horizontal_slider_style.js",
+				"bootpath" : "~/Documents/GitHub/Domain_Mixer/Max_MSP_Project",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pointer_horizontal_slider_style.js",
 				"bootpath" : "~/Documents/GitHub/Domain_Mixer/Max_MSP_Project",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",

@@ -40,6 +40,58 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-102",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 447.671546876430511, 1079.279082417488098, 50.0, 22.0 ],
+					"text" : "-0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-96",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 597.574177026748657, 1675.008346259593964, 31.0, 22.0 ],
+					"text" : "* -1."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-73",
+					"maxclass" : "live.slider",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "float" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 389.955518126487732, 997.321419060230255, 39.0, 95.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 552.223727166652679, 171.508513569831848, 53.0, 195.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_initial" : [ 0.0 ],
+							"parameter_longname" : "live.slider[2]",
+							"parameter_mmax" : 1.0,
+							"parameter_shortname" : "Phase",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 1
+						}
+
+					}
+,
+					"shownumber" : 0,
+					"varname" : "live.slider[2]"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-89",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -408,6 +460,18 @@
 							"expression" : ""
 						}
 ,
+						"slidercolor" : 						{
+							"expression" : ""
+						}
+,
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
+						"trioncolor" : 						{
+							"expression" : "themecolor.live_threshold_line_color"
+						}
+,
 						"valueof" : 						{
 							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
@@ -422,6 +486,9 @@
 ,
 					"showname" : 0,
 					"shownumber" : 0,
+					"slidercolor" : [ 0.647058823529412, 0.156862745098039, 0.156862745098039, 1.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"trioncolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
 					"varname" : "Speed"
 				}
 
@@ -738,7 +805,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 1419.544054448604584, 571.60517019033432, 50.0, 63.0 ],
+					"patching_rect" : [ 1419.544054448604584, 568.4176185131073, 50.0, 63.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 749.623447775840759, 321.672991812229156, 50.0, 63.0 ],
 					"saved_attribute_attributes" : 					{
@@ -1052,7 +1119,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "int" ],
-					"patching_rect" : [ 378.574177026748657, 1722.310953229665756, 57.0, 22.0 ],
+					"patching_rect" : [ 485.907513022422791, 1771.644285172224045, 57.0, 22.0 ],
 					"text" : "t f 0"
 				}
 
@@ -2319,7 +2386,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 378.574177026748657, 1758.621119529008865, 95.0, 22.0 ],
+					"patching_rect" : [ 485.907513022422791, 1807.954451471567154, 95.0, 22.0 ],
 					"text" : "poke~ params 1"
 				}
 
@@ -3331,13 +3398,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-137", 0 ],
-					"source" : [ "obj-235", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-238", 0 ]
 				}
@@ -3707,6 +3767,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-96", 0 ],
+					"source" : [ "obj-73", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-66", 0 ],
 					"source" : [ "obj-75", 0 ]
 				}
@@ -3883,6 +3950,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-102", 1 ],
+					"order" : 1,
+					"source" : [ "obj-96", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-137", 0 ],
+					"order" : 0,
+					"source" : [ "obj-96", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-172", 0 ],
 					"order" : 2,
 					"source" : [ "obj-97", 0 ]
@@ -3946,6 +4029,7 @@
 			"obj-27" : [ "live.dial[4]", "Curve", 0 ],
 			"obj-32" : [ "live.dial[5]", "Mod Gain", 0 ],
 			"obj-38" : [ "live.numbox[1]", "live.numbox[1]", 0 ],
+			"obj-73" : [ "live.slider[2]", "Phase", 0 ],
 			"obj-77" : [ "live.numbox", "live.numbox", 0 ],
 			"obj-88" : [ "live.tab", "live.tab", 0 ],
 			"parameterbanks" : 			{
