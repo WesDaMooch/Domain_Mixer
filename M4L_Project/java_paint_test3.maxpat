@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 41.0, 84.0, 818.0, 562.0 ],
+		"rect" : [ 34.0, 84.0, 818.0, 562.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,111 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 403.5, 793.0, 43.0, 22.0 ],
+					"text" : "refer a"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"id" : "obj-8",
+					"maxclass" : "plot~",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 403.5, 821.5, 275.991148591041565, 153.557518064975739 ],
+					"subplots" : [ 						{
+							"color" : [ 0.400000005960464, 0.400000005960464, 0.75, 1.0 ],
+							"thickness" : 1.0,
+							"point_style" : "none",
+							"line_style" : "origin",
+							"number_style" : "none",
+							"filter" : "none",
+							"domain_start" : 0.0,
+							"domain_end" : 1.0,
+							"domain_style" : "linear",
+							"domain_markers" : [  ],
+							"domain_labels" : [  ],
+							"range_start" : -1.0,
+							"range_end" : 1.0,
+							"range_style" : "linear",
+							"range_markers" : [  ],
+							"range_labels" : [  ],
+							"origin_x" : 0.0,
+							"origin_y" : 0.0
+						}
+ ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 520.5, 638.734514057636261, 130.0, 22.0 ],
+					"text" : "buffer~ a @samps 100"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"buffername" : "a",
+					"id" : "obj-5",
+					"maxclass" : "waveform~",
+					"numinlets" : 5,
+					"numoutlets" : 6,
+					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
+					"patching_rect" : [ 429.0, 695.0, 256.0, 64.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 339.827296584844589, 282.631221026182175, 133.0, 22.0 ],
+					"text" : "prepend setSamplerate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 325.988696873188019, 220.903952300548553, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 4,
+					"outlettype" : [ "int", "float", "int", "int" ],
+					"patching_rect" : [ 325.988696873188019, 254.237285256385803, 61.0, 22.0 ],
+					"text" : "dspstate~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"id" : "obj-15",
 					"jspainterfile" : "custom_horizontal_slider_style.js",
@@ -49,7 +154,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 572.129669000000035, 222.957861000000008, 80.0, 18.0 ],
+					"patching_rect" : [ 632.292886450181982, 362.746149295268992, 80.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
@@ -60,7 +165,7 @@
 						}
 ,
 						"textcolor" : 						{
-							"expression" : "themecolor.live_focus_frame"
+							"expression" : ""
 						}
 ,
 						"trioncolor" : 						{
@@ -91,6 +196,7 @@
 , 			{
 				"box" : 				{
 					"focusbordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"fontname" : "Ableton Sans Bold",
 					"id" : "obj-11",
 					"jspainterfile" : "custom_horizontal_slider_style.js",
 					"maxclass" : "live.slider",
@@ -99,7 +205,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 571.342436000000021, 170.957861000000008, 80.0, 18.0 ],
+					"patching_rect" : [ 632.292886450181982, 322.746149295268992, 80.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
@@ -149,7 +255,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 572.129669000000035, 196.957861000000008, 80.0, 18.0 ],
+					"patching_rect" : [ 632.292886450181982, 342.746149295268992, 80.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
@@ -199,7 +305,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 571.342436000000021, 274.95786099999998, 80.0, 18.0 ],
+					"patching_rect" : [ 632.292886450181982, 402.746149295268992, 80.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
@@ -271,7 +377,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.094216138124466, 134.512495130300522, 249.0, 22.0 ],
+					"patching_rect" : [ 607.842436000000021, 276.438027024269104, 249.0, 22.0 ],
 					"text" : "jspainterfile custom_horizontal_slider_style.js"
 				}
 
@@ -287,7 +393,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 571.342436000000021, 248.957861000000008, 80.0, 18.0 ],
+					"patching_rect" : [ 632.292886450181982, 382.746149295268992, 80.0, 18.0 ],
 					"saved_attribute_attributes" : 					{
 						"focusbordercolor" : 						{
 							"expression" : ""
@@ -347,14 +453,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 232.162155121564865, 142.725787550210953, 652.27168682217598, 161.905433475971222 ],
-					"proportion" : 0.5,
-					"saved_attribute_attributes" : 					{
-						"bgfillcolor" : 						{
-							"expression" : "themecolor.live_control_zombie"
-						}
-
-					}
-
+					"proportion" : 0.5
 				}
 
 			}
@@ -368,15 +467,29 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 232.162155121564865, 312.513412468605054, 434.180280566215515, 188.259258627891541 ]
+					"patching_rect" : [ 339.827296584844589, 312.870290928779582, 400.0, 169.0 ]
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-16", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"order" : 3,
+					"order" : 1,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -384,7 +497,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
-					"order" : 2,
+					"order" : 0,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -400,7 +513,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
-					"order" : 1,
+					"order" : 3,
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -408,8 +521,22 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"order" : 0,
+					"order" : 2,
 					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-24", 0 ]
 				}
 
 			}
@@ -434,14 +561,14 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "custom_horizontal_slider_style.js",
-				"bootpath" : "~/Documents/GitHub/Domain_Mixer/Max_MSP_Project",
+				"bootpath" : "~/Documents/GitHub/Domain_Mixer/M4L_Project",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "jsui_ui.js",
-				"bootpath" : "~/Documents/GitHub/Domain_Mixer/Max_MSP_Project",
+				"bootpath" : "~/Documents/GitHub/Domain_Mixer/M4L_Project",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
