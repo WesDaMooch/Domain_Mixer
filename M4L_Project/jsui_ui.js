@@ -19,49 +19,30 @@ var ui_size = [400, 169];
 
 // Text Style
 var text_font = "Ableton Sans Bold";  // Bahnschrift, Ableton Sans Bold
-var text_size = 12;             // 9.5 is abletons default
+var text_size = 20; //12             // 9.5 is abletons default
 
 function paint() {
     with (mgraphics) {
 
         // Draw Background (for testing)
-        set_source_rgba(COLOURS.background);
-        rectangle(0, 0, ui_size);
-        fill();
+        //set_source_rgba(COLOURS.background);
+        //rectangle(0, 0, ui_size);
+        //fill();
 
         // Draw Scope
         var scope_length = 160;
         var scope_height = 60;
         var scope_pad = 10;
         var num_ticks = 5;
-        drawSpectrogramBox(100, ui_size[1] - (scope_pad * 2), scope_length, scope_height,
+        var scope_start_x = 100;
+        drawScopeBox(scope_start_x, ui_size[1] - (scope_pad * 2), scope_length, scope_height,
             scope_pad, scope_length / num_ticks, 4);
 
-        //var scope_size = 160;
-        //set_source_rgba(0, 0, 0, 1);
-        //rectangle(slider_size[0], 5, scope_size, scope_size - 5);
-        //stroke();
 
-        // Draw carrier lable
-        //save();
-        //move_to(slider_size[0] + scope_length + 12, ui_size[1] - 20)
-        //rotate(-Math.PI / 2);
-        //set_source_rgba(COLOURS.text);
-        //select_font_face(text_font);
-        //set_font_size(text_size);
-        //show_text("CARRIER");
-        //restore();
+        var mod_area_start_x = scope_start_x + scope_length; //start_x + box_length
+        var mod_area_start_y = scope_height + scope_pad; //box_height + pad
 
-        // Draw Modulator lable
-        //save();
-        //move_to(75, 82)
-        //rotate(-Math.PI / 2);
-        //set_source_rgba(COLOURS.text); // white
-        //select_font_face(text_font);
-        //set_font_size(text_size);
-        //show_text("MODULATOR");
-        //restore();*/
-
+        drawModulatorArea(mod_area_start_x, mod_area_start_y, scope_pad, ui_size[1] - scope_pad);
     }
 }
 
@@ -70,7 +51,13 @@ function setSamplerate(new_sr) {
     mgraphics.redraw()
 }
 
-function drawSpectrogramBox(start_x, start_y, box_length, box_height, pad, tick_spacing, tick_height) {
+function setLineColour(r, g, b, a) {
+    COLOURS.line = [r, g, b, a];
+    COLOURS.text = [r, g, b, a];
+    mgraphics.redraw();
+}
+
+function drawScopeBox(start_x, start_y, box_length, box_height, pad, tick_spacing, tick_height) {
     with (mgraphics) {
 
         var line_width = 1;
@@ -91,6 +78,7 @@ function drawSpectrogramBox(start_x, start_y, box_length, box_height, pad, tick_
         move_to(start_x + box_length, pad)
         line_to(start_x + box_length, box_height + pad);
         stroke();
+
 
         // Draw Spectrogram Box
         // Draw bottom line
@@ -138,7 +126,6 @@ function drawSpectrogramBox(start_x, start_y, box_length, box_height, pad, tick_
         save();
         var spectrogram_title = "CARRIER";
  
-
         select_font_face(title_text_font);
         set_font_size(title_text_size);
 
@@ -153,7 +140,6 @@ function drawSpectrogramBox(start_x, start_y, box_length, box_height, pad, tick_
         // Draw vertical modulator title
         save();
         var scope_title = "MODULATOR";
-        //var horizontal_title_pad = 12; // might come up agains
 
         select_font_face(title_text_font);
         set_font_size(title_text_size);
@@ -164,5 +150,38 @@ function drawSpectrogramBox(start_x, start_y, box_length, box_height, pad, tick_
         rotate(-Math.PI * 0.5);
         show_text(scope_title);
         restore();
+    }
+}
+
+function drawModulatorArea(start_x, start_y, top_y, bottom_y) {
+    with (mgraphics) {
+
+        var line_width = 1;
+        set_line_width(line_width);
+        set_source_rgba(COLOURS.line);
+
+        var top_line_length = 110;
+        var mid_line_length = 18;
+        var diagonal_line_length = mid_line_length + 10;
+
+        // Draw
+        // Top line
+        move_to(start_x - 0.5, top_y)
+        line_to(start_x + top_line_length, top_y);
+        stroke();
+
+        move_to(start_x - 0.5, start_y)
+        line_to(start_x + mid_line_length, start_y);
+        stroke();
+
+        move_to(start_x - 0.5 + mid_line_length, start_y)
+        line_to(start_x + diagonal_line_length, bottom_y);
+        stroke();
+
+        // Bottom Line
+        move_to(start_x + diagonal_line_length, bottom_y)
+        line_to(start_x + top_line_length, bottom_y);
+        stroke();
+
     }
 }
