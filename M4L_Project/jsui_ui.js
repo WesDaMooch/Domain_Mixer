@@ -18,8 +18,8 @@ var slider_size = [80, 18];
 var ui_size = [400, 169];
 
 // Text Style
-var text_font = "Ableton Sans Bold";  // Bahnschrift, Ableton Sans Bold
-var text_size = 20; //12             // 9.5 is abletons default
+//var text_font = "Ableton Sans Bold";  // Bahnschrift, Ableton Sans Bold
+//var text_size = 12; //12             // 9.5 is abletons default
 
 function paint() {
     with (mgraphics) {
@@ -43,18 +43,10 @@ function paint() {
         var mod_area_start_y = scope_height + scope_pad; //box_height + pad
 
         drawModulatorArea(mod_area_start_x, mod_area_start_y, scope_pad, ui_size[1] - scope_pad);
-    }
-}
 
-function setSamplerate(new_sr) {
-    sr = new_sr;
-    mgraphics.redraw()
-}
-
-function setLineColour(r, g, b, a) {
-    COLOURS.line = [r, g, b, a];
-    COLOURS.text = [r, g, b, a];
-    mgraphics.redraw();
+        drawCarrierArea(scope_start_x, ui_size[1] - ((scope_pad * 2) + scope_height),
+            scope_pad, ui_size[1] - scope_pad, scope_height)
+    }   
 }
 
 function drawScopeBox(start_x, start_y, box_length, box_height, pad, tick_spacing, tick_height) {
@@ -73,6 +65,8 @@ function drawScopeBox(start_x, start_y, box_length, box_height, pad, tick_spacin
         move_to(start_x, pad)
         line_to(start_x, box_height + pad);
         stroke();
+
+        //outputValue(pad);
 
         // Draw right vertical line
         move_to(start_x + box_length, pad)
@@ -111,7 +105,7 @@ function drawScopeBox(start_x, start_y, box_length, box_height, pad, tick_spacin
         set_font_size(9.5);
 
         // Draw first label
-        var label_first = "0";
+        var label_first = "20";
         var label_first_measurement = text_measure(label_first);
         move_to(start_x - (label_first_measurement[0] * 0.5), start_y + tick_height + (label_first_measurement[1] * 0.8));
         show_text(label_first);
@@ -169,19 +163,64 @@ function drawModulatorArea(start_x, start_y, top_y, bottom_y) {
         move_to(start_x - 0.5, top_y)
         line_to(start_x + top_line_length, top_y);
         stroke();
-
+        // Mid Line
         move_to(start_x - 0.5, start_y)
         line_to(start_x + mid_line_length, start_y);
         stroke();
-
+        // Diagonal Line
         move_to(start_x - 0.5 + mid_line_length, start_y)
         line_to(start_x + diagonal_line_length, bottom_y);
         stroke();
-
         // Bottom Line
-        move_to(start_x + diagonal_line_length, bottom_y)
+        move_to(start_x - 0.5 + diagonal_line_length, bottom_y)
         line_to(start_x + top_line_length, bottom_y);
         stroke();
 
     }
 }
+
+function drawCarrierArea(start_x, start_y, top_y, bottom_y, height) {
+    with (mgraphics) {
+
+        var line_width = 1;
+        set_line_width(line_width);
+        set_source_rgba(COLOURS.line);
+
+        var top_line_length = 40;
+        var mid_line_length = 18;
+        var diagonal_line_length = mid_line_length + 10;
+
+        // Draw
+        // Bottom line
+        move_to(start_x - diagonal_line_length + 0.5, bottom_y)
+        line_to(start_x - diagonal_line_length - top_line_length, bottom_y);
+        stroke();
+        // Mid Line
+        move_to(start_x + 0.5, start_y)
+        line_to(start_x - mid_line_length, start_y);
+        stroke();
+        // Diagonal Line
+        move_to(start_x - mid_line_length + 0.5, start_y)
+        line_to(start_x - diagonal_line_length, top_y + height);
+        stroke();
+        // Top Line
+        move_to(start_x - diagonal_line_length + 0.5, top_y + height)
+        line_to(start_x - diagonal_line_length - top_line_length, top_y + height);
+        stroke();
+    }
+}
+
+function setSamplerate(new_sr) {
+    sr = new_sr;
+    mgraphics.redraw()
+}
+
+function setLineColour(r, g, b, a) {
+    COLOURS.line = [r, g, b, a];
+    COLOURS.text = [r, g, b, a];
+    mgraphics.redraw();
+}
+
+function outputValue(value) {
+    outlet(0, value);
+}  

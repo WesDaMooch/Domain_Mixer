@@ -26,21 +26,27 @@ function paint() {
         var borderPadding = 2;
         var barPadding = borderPadding * 0.5;
 
-        // Fill Background
-        set_source_rgba(COLOURS.background);
-        rectangle(0, 0, width, height);
-        fill();
+        
+        if (slider_name != "Phase") {
+            // Fill Background
+            set_source_rgba(COLOURS.background);
+            rectangle(0, 0, width, height);
+            fill();
+        }
 
-        // Draw Border
-        var borderTabSize = 4.5;
-        set_source_rgba(COLOURS.border);
-        set_line_width(1);
-        rectangle(0.5, borderPadding * 0.5, width - 1, height - borderPadding);
-        stroke();
 
-        set_source_rgba(COLOURS.background);
-        rectangle(borderTabSize, 0, width - (borderTabSize * 2), height);
-        fill();
+        if (slider_name != "Phase") {
+            // Draw Border
+            var borderTabSize = 4.5;
+            set_source_rgba(COLOURS.border);
+            set_line_width(1);
+            rectangle(0.5, borderPadding * 0.5, width - 1, height - borderPadding);
+            stroke();
+
+            set_source_rgba(COLOURS.background);
+            rectangle(borderTabSize, 0, width - (borderTabSize * 2), height);
+            fill();
+        }
 
         // Draw Bar
         var pointerSize = 13;
@@ -50,11 +56,12 @@ function paint() {
 
         if (slider_name == "Direction") {
             // Pointer bar
-            //rectangle(barPos - (pointerSize * 0.5), barPadding * 0.5, pointerSize, height - barPadding);
-
             rectangle_rounded(barPos - (pointerSize * 0.5), barPadding * 0.5, pointerSize, height - barPadding, pointerRoundness, pointerRoundness)
         } else if (slider_name == "Zoom" || slider_name == "Phase") {
             // Bidirectional bar
+            if (slider_name == "Phase") {
+                barPadding = borderPadding * 5;
+            }
             if (value > 0.5) {
                 barPos = ((value * 2) - 1) * (width * 0.5);
                 rectangle(width * 0.5, barPadding * 0.5, barPos, height - barPadding);
@@ -117,8 +124,10 @@ function paint() {
             grad.add_color_stop_rgba(1.0, COLOURS.grad2);
         }
 
-        move_to((width / 2) - text_measurement[0] / 2, (height / 2) + text_measurement[1] / 3.5)
-        text_path(slider_name);                  // Convert text to path
+        if (slider_name != "Phase") {
+            move_to((width / 2) - text_measurement[0] / 2, (height / 2) + text_measurement[1] / 3.5)
+            text_path(slider_name);                  // Convert text to path
+        }
 
         restore();
         set_source(grad);
@@ -129,10 +138,10 @@ function paint() {
         set_font_size(label_text_size);
 
         if (slider_name == "Zoom" || slider_name == "Phase") {
-            move_to(6, (height / 2) + text_measurement[1] / 4);
+            move_to(6, (height / 2) + text_measurement[1] / 4.25);
             text_path("-");
 
-            move_to(width - 12, (height / 2) + text_measurement[1] / 3.5);
+            move_to(width - 12, (height / 2) + text_measurement[1] / 4.25);
             text_path("+");
         } //Direction arrows here
 
