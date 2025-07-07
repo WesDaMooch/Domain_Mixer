@@ -12,8 +12,9 @@
   
 <br>
 
+- [ ] down or up sample display buffer, see if performace is effected
 - [ ] Fix modwriter delta thing 
-- [ ] Remove Raw input
+- [x] Remove Raw input
 - [ ] Increase max Zoom (10x)
 - [ ] Add UI performance options (?)
 - [ ] General performace improvements 
