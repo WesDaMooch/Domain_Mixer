@@ -2,12 +2,12 @@
 
 ### To do:
 
-- UI
-  - Phase bar dashes
-  - Internal/External switch
-  - Visualize left & right channels in scope 
-  - Fit scopes to background jsui
+- [ ] UI
+  - [ ] Phase bar dashes
+  - [ ] Internal/External switch
+  - [ ] Visualize left & right channels in scope 
+  - [ ] Fit scopes to background jsui
+  
+<br>
 
-- General performace improvement 
-
-### Added:
+- [ ] General performace improvement 
