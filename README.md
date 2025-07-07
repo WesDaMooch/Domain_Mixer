@@ -4,11 +4,16 @@
 
 - [ ] UI
   - [ ] Phase bar dashes
+  - [ ] Swap Mix slider style to pointer type 
   - [ ] Internal/External switch
   - [ ] Visualize left & right channels in scope 
   - [ ] Fit scopes to background jsui
+  - [ ] Custom colour schemes
   
 <br>
 
-- [ ] Remove Raw input 
-- [ ] General performace improvement 
+- [ ] Fix modwriter delta thing 
+- [ ] Remove Raw input
+- [ ] Increase max Zoom (10x)
+- [ ] Add UI performance options (?)
+- [ ] General performace improvements 
