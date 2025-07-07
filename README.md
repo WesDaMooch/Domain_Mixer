@@ -10,4 +10,5 @@
   
 <br>
 
+- [ ] Remove Raw input 
 - [ ] General performace improvement 
