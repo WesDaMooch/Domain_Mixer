@@ -12,8 +12,14 @@
   
 <br>
 
-- [ ] Fix modwriter delta thing 
+- [ ] Fix sample write wrap issue
+- [ ] Handling of denormal values
+- [ ] Nonlinear Mix 
+- [x] Fix modwriter sah 
 - [x] Remove Raw input
-- [ ] Increase max Zoom (10x)
+- [ ] Invert switch
+- [ ] Clean up Curve code
+- [ ] Increase max Zoom (10x), and min calculated for sr
+- [ ] Soft/Hard Clipping options
 - [ ] Add UI performance options (?)
 - [ ] General performace improvements 
