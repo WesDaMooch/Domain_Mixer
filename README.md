@@ -20,7 +20,7 @@
 - [x] Clean up Curve buffer writer
 - [x] Increase max Zoom (10x)
 - [ ] Calculate min Zoom from samplerate
-- [ ] Soft/Hard Clipping options
+- [x] Soft/Hard Clipping options
 - [ ] Add UI performance options (?)
 
 <br>
