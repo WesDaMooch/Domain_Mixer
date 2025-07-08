@@ -12,13 +12,14 @@
   
 <br>
 
-- [ ] Fix sample write wrap issue
-- [ ] Nonlinear Mix 
+- [ ] Fix sample write wrap issue (?)
+- [x] Crossfader style curve Mix function
 - [x] Fix modwriter sah 
 - [x] Remove Raw input
 - [ ] Invert switch
-- [ ] Clean up Curve buffer writer
-- [ ] Increase max Zoom (10x), and min calculated from sr
+- [x] Clean up Curve buffer writer
+- [x] Increase max Zoom (10x)
+- [ ] Calculate min Zoom from samplerate
 - [ ] Soft/Hard Clipping options
 - [ ] Add UI performance options (?)
 
