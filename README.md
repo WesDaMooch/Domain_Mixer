@@ -14,7 +14,7 @@
 
 - [ ] Fix sample write wrap issue (?)
 - [x] Crossfader style curve Mix function
-- [x] Fix modwriter sah 
+- [x] Fix mod-writer sah bug 
 - [x] Remove Raw input
 - [ ] Invert switch
 - [x] Clean up Curve buffer writer
