@@ -25,5 +25,5 @@
 <br>
 
 - [ ] General performace improvements
-  - [ ] Unified pfft for two channel audio
-  - [ ] Unified function combining Zoom, Phase & Curve, processed as messages
+- [x] Unified pfft for two channel audio
+- [ ] Unified function combining Zoom, Phase & Curve, processed as messages
