@@ -21,4 +21,9 @@
 - [ ] Increase max Zoom (10x), and min calculated from sr
 - [ ] Soft/Hard Clipping options
 - [ ] Add UI performance options (?)
-- [ ] General performace improvements 
+
+<br>
+
+- [ ] General performace improvements
+  - [ ] Unified pfft for two channel audio
+  - [ ] Unified function combining Zoom, Phase & Curve, processed as messages
