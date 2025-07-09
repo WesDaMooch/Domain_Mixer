@@ -25,6 +25,7 @@
 
 <br>
 
-- [ ] 9% average CPU usage in Live
+- [x] 9% average CPU usage in Live
+- [ ] 6-7% average CPU usage in Live
 - [x] Unified pfft for two channel audio
 - [ ] Unified function combining Zoom, Phase & Curve, processed as messages (?)
