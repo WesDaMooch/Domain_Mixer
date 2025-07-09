@@ -25,6 +25,6 @@
 
 <br>
 
-- [ ] General performace improvements
+- [ ] 9% average CPU usage in Live
 - [x] Unified pfft for two channel audio
-- [ ] Unified function combining Zoom, Phase & Curve, processed as messages
+- [ ] Unified function combining Zoom, Phase & Curve, processed as messages (?)
