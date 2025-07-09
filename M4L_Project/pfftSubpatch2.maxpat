@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 41.0, 84.0, 812.0, 562.0 ],
+		"rect" : [ 35.0, 84.0, 570.0, 553.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,28 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 396.078443884849548, 39.241671293973923, 173.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : "stereoflag"
+					}
+,
+					"text" : "in 1 @attr_comment stereoflag"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 215.334109902381897, 243.120868623256683, 123.0, 22.0 ],
-					"text" : "poke~ carrier_display"
+					"patching_rect" : [ 215.334109902381897, 243.120868623256683, 128.0, 22.0 ],
+					"text" : "poke~ ---carrierdisplay"
 				}
 
 			}
@@ -55,8 +71,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 342.883124709129333, 243.120868623256683, 112.0, 22.0 ],
-					"text" : "poke~ mod_display"
+					"patching_rect" : [ 350.861848056316376, 243.120868623256683, 118.0, 22.0 ],
+					"text" : "poke~ ---moddisplay"
 				}
 
 			}
@@ -78,7 +94,7 @@
 						}
 ,
 						"classnamespace" : "dsp.gen",
-						"rect" : [ 41.0, 84.0, 1213.0, 562.0 ],
+						"rect" : [ 675.0, 84.0, 570.0, 553.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

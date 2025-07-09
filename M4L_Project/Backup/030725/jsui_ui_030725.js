@@ -12,6 +12,9 @@ mgraphics.autofill = 0;
 
 var sr = 48000; // Default samplerate
 
+//slider size = 80 x 18
+var slider_size = [80, 18];
+
 var ui_size = [400, 169];
 
 // Text Style
@@ -20,6 +23,11 @@ var ui_size = [400, 169];
 
 function paint() {
     with (mgraphics) {
+
+        // Draw Background (for testing)
+        //set_source_rgba(COLOURS.background);
+        //rectangle(0, 0, ui_size);
+        //fill();
 
         // Draw Scope
         var scope_length = 160;
@@ -68,9 +76,9 @@ function drawScopeBox(start_x, start_y, box_length, box_height, pad, tick_spacin
 
         // Draw Spectrogram Box
         // Draw bottom line
-        //move_to(start_x, start_y);
-        //line_to(start_x + box_length, start_y);
-        //stroke();
+        move_to(start_x, start_y);
+        line_to(start_x + box_length, start_y);
+        stroke();
 
         // Draw left vertical line
         move_to(start_x, start_y)
