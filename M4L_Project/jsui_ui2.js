@@ -19,8 +19,8 @@ var sr = 48000; // Default samplerate
 var ui_size = [400, 169];
 
 // Text Style
-//var text_font = "Ableton Sans Bold";  // Bahnschrift, Ableton Sans Bold
-//var text_size = 12; //12             // 9.5 is abletons default
+var text_font = "Ableton Sans Medium"; 
+var text_size = 9.5;              
 
 function paint() {
     with (mgraphics) {
@@ -39,24 +39,28 @@ function paint() {
 
         drawLCD(LCD_x, LCD_y, LCD_width, LCD_height)
 
+        //Dial size 28 x 28
+        var ticks = 11;
+        var i_r = 15;
+        var o_r = 18;
+        var dial_size = 28;
+        
+        var d1_x = 258 + (dial_size * 0.5);
+        var d1_y = 47 + (dial_size * 0.5);
+        drawDialTicks(d1_x, d1_y, i_r, o_r, ticks, "Speed")
 
-/*        // Draw Scope
-        var scope_length = 160;
-        var scope_height = 60;
-        var scope_pad = 10;
-        var num_ticks = 5;
-        var scope_start_x = 100;
-        drawScopeBox(scope_start_x, ui_size[1] - (scope_pad * 2), scope_length, scope_height,
-            scope_pad, scope_length / num_ticks, 4);
+        var d2_x = 312 + (dial_size * 0.5);
+        var d2_y = 47 + (dial_size * 0.5);
+        drawDialTicks(d2_x, d2_y, i_r, o_r, ticks, "Curve")
 
+        var d3_x = 258 + (dial_size * 0.5);
+        var d3_y = 96 + (dial_size * 0.5);
+        drawDialTicks(d3_x, d3_y, i_r, o_r, ticks, "Gain")
 
-        var mod_area_start_x = scope_start_x + scope_length; //start_x + box_length
-        var mod_area_start_y = scope_height + scope_pad; //box_height + pad
+        var d4_x = 312 + (dial_size * 0.5);
+        var d4_y = 96 + (dial_size * 0.5);
+        drawDialTicks(d4_x, d4_y, i_r, o_r, ticks, "Thresh")
 
-        drawModulatorArea(mod_area_start_x, mod_area_start_y, scope_pad, ui_size[1] - scope_pad);
-
-        drawCarrierArea(scope_start_x, ui_size[1] - ((scope_pad * 2) + scope_height),
-            scope_pad, ui_size[1] - scope_pad, scope_height)*/
     }   
 }
 
@@ -67,8 +71,8 @@ function drawLCD(x, y, width, height) {
         var v_pad = 20;             //vertical padding
         var h_pad = width * 0.1;    //horizontal padding
       
-        select_font_face("Ableton Sans Medium");
-        set_font_size(9.5);
+        select_font_face(text_font);
+        set_font_size(text_size);
 
         set_line_width(line_width);
 
@@ -163,162 +167,45 @@ function drawLCD(x, y, width, height) {
     }
 }
 
-function drawScopeBox(start_x, start_y, box_length, box_height, pad, tick_spacing, tick_height) {
+function drawDialTicks(x, y, inner_radius, outer_radius, num_ticks, name) {
     with (mgraphics) {
 
-        var line_width = 1;
-        set_line_width(line_width);
-        set_source_rgba(COLOURS.line);
+        // Ticks
+        set_line_width(1);
+        set_source_rgba(COLOURS.LCDbackground); //change
 
-        var title_text_size = 9.5;
-        var title_text_font = "Ableton Sans Bold";
+        var ndegrees = 270;
+        var arc_start = (270 - ndegrees * 0.5) * (2 * Math.PI / 360);
+        var arc_end = (270 + ndegrees * 0.5) * (2 * Math.PI / 360);
 
+        for (var i = 0; i < num_ticks; i++) {
+            var t = i / (num_ticks - 1);
+            var angle = arc_start + t * (arc_end - arc_start);
 
-        // Draw Scope Box
-        // Draw left vertical line
-        move_to(start_x, pad)
-        line_to(start_x, box_height + pad);
-        stroke();
+            var x1 = x + inner_radius * Math.cos(angle);
+            var y1 = y + inner_radius * Math.sin(angle);
+            var x2 = x + outer_radius * Math.cos(angle);
+            var y2 = y + outer_radius * Math.sin(angle);
 
-        // Draw right vertical line
-        move_to(start_x + box_length, pad)
-        line_to(start_x + box_length, box_height + pad);
-        stroke();
-
-
-        // Draw Spectrogram Box
-        // Draw bottom line
-        //move_to(start_x, start_y);
-        //line_to(start_x + box_length, start_y);
-        //stroke();
-
-        // Draw left vertical line
-        move_to(start_x, start_y)
-        line_to(start_x, start_y - box_height);
-        stroke();
-
-        // Draw right vertical line
-        move_to(start_x + box_length, start_y)
-        line_to(start_x + box_length, start_y - box_height);
-        stroke();
-
-        // Draw ticks
-        for (var i = 0; i <= box_length; i += tick_spacing) {
-            var x = start_x + i;
-            move_to(x, start_y - (line_width * 0.5));
-            line_to(x, start_y + tick_height);
+            move_to(x1, y1);
+            line_to(x2, y2);
             stroke();
+
+            // Title
+/*            select_font_face(text_font);
+            set_font_size(text_size);
+
+            //set_source_rgba(COLOURS.LCDtext); //change
+
+            name_measure = text_measure(name);
+
+            var name_pad = 3;
+            var name_x = x - (name_measure[0] * 0.5);
+            var name_y = y - outer_radius - name_pad;
+
+            move_to(name_x, name_y);
+            show_text(name);*/
         }
-
-
-        // Draw Text
-        set_source_rgba(COLOURS.text);
-        select_font_face("Ableton Sans Medium");
-        set_font_size(9.5);
-
-        // Draw first label
-        var label_first = "20";
-        var label_first_measurement = text_measure(label_first);
-        move_to(start_x - (label_first_measurement[0] * 0.5), start_y + tick_height + (label_first_measurement[1] * 0.8));
-        show_text(label_first);
-
-        // Draw last label (samplerate dependant)
-        var label_last = ((sr * 0.5) * 0.001).toFixed(0) + "k";
-        var label_last_measurement = text_measure(label_last);
-        move_to(start_x + box_length - (label_last_measurement[0] * 0.5), start_y + tick_height + (label_last_measurement[1] * 0.8));
-        show_text(label_last);
-
-        // Draw vertical carrier title
-        save();
-        var spectrogram_title = "CARRIER";
- 
-        select_font_face(title_text_font);
-        set_font_size(title_text_size);
-
-        var spectrogram_title_measurement = text_measure(spectrogram_title);
-        var horizontal_spectrogram_title_pad = spectrogram_title_measurement[1]; 
-
-        move_to(start_x + box_length + horizontal_spectrogram_title_pad, start_y - (box_height * 0.5) + (spectrogram_title_measurement[0] * 0.5))
-        rotate(-Math.PI * 0.5);
-        show_text(spectrogram_title);
-        restore();
-
-        // Draw vertical modulator title
-        save();
-        var scope_title = "MODULATOR";
-
-        select_font_face(title_text_font);
-        set_font_size(title_text_size);
-
-        var scope_title_measurement = text_measure(scope_title);
-        var horizontal_scope_title_pad = scope_title_measurement[1] *  0.5;
-        move_to(start_x - horizontal_scope_title_pad, (box_height + pad) - (box_height * 0.5) + (scope_title_measurement[0] * 0.5))
-        rotate(-Math.PI * 0.5);
-        show_text(scope_title);
-        restore();
-    }
-}
-
-function drawModulatorArea(start_x, start_y, top_y, bottom_y) {
-    with (mgraphics) {
-
-        var line_width = 1;
-        set_line_width(line_width);
-        set_source_rgba(COLOURS.line);
-
-        var top_line_length = 110;
-        var mid_line_length = 18;
-        var diagonal_line_length = mid_line_length + 10;
-
-        // Draw
-        // Top line
-        move_to(start_x - 0.5, top_y)
-        line_to(start_x + top_line_length, top_y);
-        stroke();
-        // Mid Line
-        move_to(start_x - 0.5, start_y)
-        line_to(start_x + mid_line_length, start_y);
-        stroke();
-        // Diagonal Line
-        move_to(start_x - 0.5 + mid_line_length, start_y)
-        line_to(start_x + diagonal_line_length, bottom_y);
-        stroke();
-        // Bottom Line
-        move_to(start_x - 0.5 + diagonal_line_length, bottom_y)
-        line_to(start_x + top_line_length, bottom_y);
-        stroke();
-
-    }
-}
-
-function drawCarrierArea(start_x, start_y, top_y, bottom_y, height) {
-    with (mgraphics) {
-
-        var line_width = 1;
-        set_line_width(line_width);
-        set_source_rgba(COLOURS.line);
-
-        var top_line_length = 40;
-        var mid_line_length = 18;
-        var diagonal_line_length = mid_line_length + 10;
-
-        // Draw
-        // Bottom line
-        move_to(start_x - diagonal_line_length + 0.5, bottom_y)
-        line_to(start_x - diagonal_line_length - top_line_length, bottom_y);
-        stroke();
-        // Mid Line
-        move_to(start_x + 0.5, start_y)
-        line_to(start_x - mid_line_length, start_y);
-        stroke();
-        // Diagonal Line
-        move_to(start_x - mid_line_length + 0.5, start_y)
-        line_to(start_x - diagonal_line_length, top_y + height);
-        stroke();
-        // Top Line
-        move_to(start_x - diagonal_line_length + 0.5, top_y + height)
-        line_to(start_x - diagonal_line_length - top_line_length, top_y + height);
-        stroke();
     }
 }
 
@@ -339,5 +226,6 @@ function setLCDBackgroundColour(r, g, b, a) {
 }
 
 function outputValue(value) {
+    //debug
     outlet(0, value);
 }  

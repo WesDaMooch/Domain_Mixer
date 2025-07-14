@@ -51,12 +51,12 @@ function drawHorizontalSlider(slider_name, value, width, height) {
         set_source_rgba(COLOURS.bar);
         // Left horizontal bar
         move_to(0, height * 0.5);
-        line_to(value_x - pointer_width, height * 0.5);
+        line_to((value_x - pointer_width) - (line_width * 0.5), height * 0.5);
         stroke();
 
         // Right horizontal bar
-        move_to(value_x + pointer_width, height * 0.5);
-        line_to(width + (line_width * 2), height * 0.5);
+        move_to(value_x + pointer_width + (line_width * 0.5), height * 0.5);
+        line_to(width + (line_width * 0.5), height * 0.5);
         stroke();
 
         if (slider_name == "Direction") {

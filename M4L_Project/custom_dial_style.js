@@ -56,11 +56,11 @@ function drawDial(name, value, width, height) {
         fill();
 
         // Title
-        select_font_face(text_font);
-        set_font_size(text_size);
+        //select_font_face(text_font);
+        //set_font_size(text_size);
 
-        set_source_rgba(COLOURS.text);
+        //set_source_rgba(COLOURS.text);
 
-        var title_measurement = text_measure(name);
+        //var title_measurement = text_measure(name);
     }
 }
