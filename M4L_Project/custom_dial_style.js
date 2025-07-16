@@ -3,10 +3,8 @@
 var COLOURS = {
     // Dial knob
     body: box.getattr("activefgdialcolor"),
-    pointer: box.getattr("textcolor"),
-    text: [0, 0, 0, 1]
-    //LCDtext: [1.000, 1.000, 1.000, 0.459],
-
+    border: box.getattr("activedialcolor"),
+    pointer: box.getattr("activeneedlecolor")
 };
 
 // Text
@@ -31,7 +29,7 @@ function drawDial(name, value, width, height) {
 
         var ndegrees = 270;
 
-        //Body
+        // Body
         var body_radius = width * 0.5;
         var body_x = width * 0.5;
         var body_y = height - body_radius;
@@ -40,9 +38,16 @@ function drawDial(name, value, width, height) {
         arc(body_x, body_y, body_radius, 0, 2 * Math.PI);
         fill(); 
 
+        // Border
+        set_line_width(1);
+        set_source_rgba(COLOURS.border);
+
+        arc(body_x, body_y, body_radius - 0.5, 0, 2 * Math.PI);
+        stroke();
+
         // Pointer
-        var pointer_radius = 1.5;
-        var pointer_arc_radius = body_radius - 4;
+        var pointer_radius = 1.9;
+        var pointer_arc_radius = body_radius - 5;
 
         var arc_start = (270 - ndegrees * 0.5) * (2 * Math.PI / 360);
         var arc_end = (270 + ndegrees * 0.5) * (2 * Math.PI / 360);
@@ -54,13 +59,5 @@ function drawDial(name, value, width, height) {
         set_source_rgba(COLOURS.pointer);
         arc(pointer_x, pointer_y, pointer_radius, 0, 2 * Math.PI);
         fill();
-
-        // Title
-        //select_font_face(text_font);
-        //set_font_size(text_size);
-
-        //set_source_rgba(COLOURS.text);
-
-        //var title_measurement = text_measure(name);
     }
 }

@@ -15,8 +15,7 @@ var COLOURS = {
 
 
 // Text style
-var text_font = "Ableton Sans Bold";  
-//var text_size = 9.5;                         
+var label_text_font = "Ableton Sans Bold";                          
 var label_text_size = 9.5;
 
 var w = box.rect[2] - box.rect[0];
@@ -49,17 +48,18 @@ function drawHorizontalSlider(slider_name, value, width, height) {
         var value_x = value * width;
 
         set_source_rgba(COLOURS.bar);
-        // Left horizontal bar
-        move_to(0, height * 0.5);
-        line_to((value_x - pointer_width) - (line_width * 0.5), height * 0.5);
-        stroke();
-
-        // Right horizontal bar
-        move_to(value_x + pointer_width + (line_width * 0.5), height * 0.5);
-        line_to(width + (line_width * 0.5), height * 0.5);
-        stroke();
-
         if (slider_name == "Direction") {
+            // Left horizontal bar
+            move_to(0, height * 0.5);
+            line_to((value_x - pointer_width) - (line_width * 0.5), height * 0.5);
+            stroke();
+
+            // Right horizontal bar
+            move_to(value_x + pointer_width + (line_width * 0.5), height * 0.5);
+            line_to(width + (line_width * 0.5), height * 0.5);
+            stroke();
+
+            // Pointer arrow
             pointer_width = 2.5;
 
             var max_arrow_amount = (height * 0.5) - (line_width * 0.5);
@@ -93,6 +93,19 @@ function drawHorizontalSlider(slider_name, value, width, height) {
                 stroke();
             }
         } else {
+    
+            // Mix
+            value_x = value * (width - 2 * pointer_width - line_width) + pointer_width + (line_width * 0.5);
+
+            // Left horizontal bar
+            move_to(0, height * 0.5);
+            line_to(value_x - pointer_width - (line_width * 0.5), height * 0.5);
+            stroke();
+
+            // Right horizontal bar
+            move_to(value_x + pointer_width + (line_width * 0.5), height * 0.5);
+            line_to(width, height * 0.5);
+            stroke();
 
             // Left vertical pointer bar
             move_to(value_x - pointer_width, line_width * 0.5);
@@ -167,7 +180,7 @@ function drawHorizontalLCDSlider(value, width, height) {
         }
 
         // Label
-        select_font_face(text_font);
+        select_font_face(label_text_font);
         set_font_size(label_text_size);
 
         var left_label = "-";
@@ -195,6 +208,7 @@ function drawHorizontalLCDSlider(value, width, height) {
 function drawVerticalLCDSlider(value, width, height) {
     with (mgraphics) {
         var bar_padding = 10;
+        var height_padding = 20;
         var line_width = 1;
         set_line_width(line_width);
 
@@ -251,7 +265,7 @@ function drawVerticalLCDSlider(value, width, height) {
         }
 
         // Label
-        select_font_face(text_font);
+        select_font_face(label_text_font);
         set_font_size(label_text_size);
 
         var bottom_label = "-";

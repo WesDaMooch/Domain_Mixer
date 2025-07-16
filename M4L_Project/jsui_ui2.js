@@ -1,26 +1,23 @@
 //Wes L-M 2025
-var COLOURS = {
-    // Slider backround and bar
-    background: [0.212, 0.212, 0.212, 1.000],
-    text: [0.710, 0.710, 0.710, 1.000],
-    line: [0.710, 0.710, 0.710, 1.000],
-
-    LCDbackground: [0.094, 0.094, 0.094, 1.000],
-    LCDline: [1.000, 1.000, 1.000, 0.459], //constant
-    LCDtext: [1.000, 1.000, 1.000, 0.459]  //constant
-};
 
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 
-var sr = 48000; // Default samplerate
+var COLOURS = {
+    LCDbackground: [1, 0, 1, 1],
+    LCDline: [1.000, 1.000, 1.000, 0.459], 
+    LCDtext: [1.000, 1.000, 1.000, 0.459],  
 
-var ui_size = [400, 169];
+    Dialticks: [1, 0, 1, 1]
+};
 
 // Text Style
 var text_font = "Ableton Sans Medium"; 
-var text_size = 9.5;              
+var text_size = 9.5;     
+
+// Default samplerate
+var sr = 48000; 
 
 function paint() {
     with (mgraphics) {
@@ -30,7 +27,6 @@ function paint() {
         var input_button_size = 35;
         var horizontal_pad = 5;
 
-
         // Draw LCD background
         var LCD_x = (horizontal_pad * 2) + input_button_size;
         var LCD_y = 0;
@@ -39,27 +35,36 @@ function paint() {
 
         drawLCD(LCD_x, LCD_y, LCD_width, LCD_height)
 
+        // Draw dial ticks
+        // right area = 10 + 35 + 200 = 245
+        // right slider = 250
+        // right slider end = 250 + 80 = 330
+
+        // right dail 330 - 28 - 5
+
+        // device end = 335
+
         //Dial size 28 x 28
         var ticks = 11;
-        var i_r = 15;
-        var o_r = 18;
+        var i_r = 15; 
+        var o_r = 19;
         var dial_size = 28;
         
-        var d1_x = 258 + (dial_size * 0.5);
-        var d1_y = 47 + (dial_size * 0.5);
+        var d1_x = 252 + (dial_size * 0.5);
+        var d1_y = 52 + (dial_size * 0.5);
         drawDialTicks(d1_x, d1_y, i_r, o_r, ticks, "Speed")
 
-        var d2_x = 312 + (dial_size * 0.5);
-        var d2_y = 47 + (dial_size * 0.5);
+        var d2_x = 300 + (dial_size * 0.5);
+        var d2_y = 52 + (dial_size * 0.5);
         drawDialTicks(d2_x, d2_y, i_r, o_r, ticks, "Curve")
 
-        var d3_x = 258 + (dial_size * 0.5);
-        var d3_y = 96 + (dial_size * 0.5);
-        drawDialTicks(d3_x, d3_y, i_r, o_r, ticks, "Gain")
+        var d3_x = 252 + (dial_size * 0.5);
+        var d3_y = 104 + (dial_size * 0.5);
+        drawDialTicks(d3_x, d3_y, i_r, o_r, ticks, "Thresh")
 
-        var d4_x = 312 + (dial_size * 0.5);
-        var d4_y = 96 + (dial_size * 0.5);
-        drawDialTicks(d4_x, d4_y, i_r, o_r, ticks, "Thresh")
+        var d4_x = 300 + (dial_size * 0.5);
+        var d4_y = 104 + (dial_size * 0.5);
+        drawDialTicks(d4_x, d4_y, i_r, o_r, ticks, "Gain")
 
     }   
 }
@@ -70,9 +75,6 @@ function drawLCD(x, y, width, height) {
         var line_width = 1; 
         var v_pad = 20;             //vertical padding
         var h_pad = width * 0.1;    //horizontal padding
-      
-        select_font_face(text_font);
-        set_font_size(text_size);
 
         set_line_width(line_width);
 
@@ -107,6 +109,8 @@ function drawLCD(x, y, width, height) {
         }
 
         // Draw text
+        select_font_face(text_font);
+        set_font_size(text_size);
         set_source_rgba(COLOURS.LCDtext);
 
         // Title
@@ -147,6 +151,8 @@ function drawLCD(x, y, width, height) {
         line_to(scope_x, scope_end_y);
         stroke();
 
+        outputValue(scope_end_y);
+
         // Right line
         move_to(scope_x + scope_width, scope_y);
         line_to(scope_x + scope_width, scope_end_y);
@@ -172,7 +178,7 @@ function drawDialTicks(x, y, inner_radius, outer_radius, num_ticks, name) {
 
         // Ticks
         set_line_width(1);
-        set_source_rgba(COLOURS.LCDbackground); //change
+        set_source_rgba(COLOURS.Dialticks);
 
         var ndegrees = 270;
         var arc_start = (270 - ndegrees * 0.5) * (2 * Math.PI / 360);
@@ -190,22 +196,18 @@ function drawDialTicks(x, y, inner_radius, outer_radius, num_ticks, name) {
             move_to(x1, y1);
             line_to(x2, y2);
             stroke();
-
-            // Title
-/*            select_font_face(text_font);
-            set_font_size(text_size);
-
-            //set_source_rgba(COLOURS.LCDtext); //change
-
-            name_measure = text_measure(name);
-
-            var name_pad = 3;
-            var name_x = x - (name_measure[0] * 0.5);
-            var name_y = y - outer_radius - name_pad;
-
-            move_to(name_x, name_y);
-            show_text(name);*/
         }
+
+        // Title
+        select_font_face(text_font);
+        set_font_size(text_size);
+        set_source_rgba(COLOURS.Dialticks);
+
+        var name_pad = 3;
+        name_measure = text_measure(name);
+
+        move_to(x - (name_measure[0] * 0.5), y - outer_radius - name_pad);
+        show_text(name);
     }
 }
 
@@ -214,14 +216,13 @@ function setSamplerate(new_sr) {
     mgraphics.redraw()
 }
 
-function setLineColour(r, g, b, a) {
-    COLOURS.line = [r, g, b, a];
-    COLOURS.text = [r, g, b, a];
+function setLCDBackgroundColour(r, g, b, a) {
+    COLOURS.LCDbackground = [r, g, b, a];
     mgraphics.redraw();
 }
 
-function setLCDBackgroundColour(r, g, b, a) {
-    COLOURS.LCDbackground = [r, g, b, a];
+function setDialTickColour(r, g, b, a) {
+    COLOURS.Dialticks = [r, g, b, a];
     mgraphics.redraw();
 }
 
