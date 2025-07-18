@@ -2,11 +2,15 @@
 
 
 ## Proposed Future Updates:
-#### UI
+### UI
   - [ ] Custom themes
-  
-#### Behaviour
+
+<br>
+
+### Behaviour
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
+
+<br>
 
 Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)
