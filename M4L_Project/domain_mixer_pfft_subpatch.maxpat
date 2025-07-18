@@ -40,6 +40,19 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-19",
+					"linecount" : 12,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1138.0, 39.241671293973923, 374.0, 172.0 ],
+					"presentation_linecount" : 12,
+					"text" : "Copyright 2025 Wesley Lawrence Leggo-Morrell\n\nAuthor: Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)\n\nLicensed under the MIT License. See LICENSE file or\nhttps://opensource.org/licenses/MIT for information.\n\n-----------------------------------------------------------------------------\n\nDomain Mixer pfft Subpatch\nVersion:     BETAv1.0\nCreated:    18/07/2025"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -931,18 +944,6 @@
 					"outlettype" : [ "float" ],
 					"patching_rect" : [ 259.675560683012009, 415.103150010108948, 29.5, 22.0 ],
 					"text" : "* 1."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-68",
-					"linecount" : 8,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1262.240997433662415, 16.012688964605331, 110.0, 117.0 ],
-					"text" : "Ch 1 - Phase \nCh 2 - Down Mix\nCh 3 - Up Mix\nCh 4 - RMS/Raw X\nCh 5 - Mod Gain\nCh 6 - Zoom\nCh 7 - Mix\nCh 8 - Threshold"
 				}
 
 			}
