@@ -18,6 +18,9 @@ The Domain Mixer is a Max for Live effect for Ableton Live 12. The device takes 
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
 
+### Bug Fixes
+- [ ] Hide Channel display parameter from Live
+
 <br>
 
 ## Change Log
