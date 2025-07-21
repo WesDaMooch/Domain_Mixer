@@ -6,7 +6,7 @@
 
 <br>
 
-Domain Mixer is a Max for Live effect for Ableton Live 12. The device takes a traditional stereo two-channel mixer and turns it on its side. Now, instead of blending audio amplitudes, the spectral content of one signal is modulated by the amplitude envelope of another — the frequency domain mixed with the time domain.
+The Domain Mixer is a Max for Live effect for Ableton Live 12. The device takes a traditional stereo two-channel mixer and turns it on its side. Now, instead of blending audio amplitudes, the spectral content of one signal is modulated by the amplitude envelope of another — the frequency domain mixed with the time domain.
 
 <br>
 
