@@ -11,6 +11,7 @@
   - [ ] Custom themes
 
 ### Behaviour
+- [ ] Scope Mode – a feature that provides enhanced control and visualization for low-frequency modulators
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
 
