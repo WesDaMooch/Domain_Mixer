@@ -14,6 +14,9 @@
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
 
+### Bug Fixes
+- [ ] Hide Channel display parameter from Live
+
 <br>
 
 ## Change Log
