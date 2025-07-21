@@ -15,7 +15,7 @@
 - [ ] Improve CPU performance
 
 ### Bug Fixes
-- [ ] Hide Channel display parameter from Live
+- [ ] Hide Channel Display parameter from Live
 
 <br>
 
@@ -27,5 +27,5 @@
 <br>
 
 ## License
-This project is licensed under the [MIT License].  
+This project is licensed under the MIT License.  
 Copyright (c) 2025 Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)
