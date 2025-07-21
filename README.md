@@ -28,4 +28,4 @@
 
 ## License
 This project is licensed under the [MIT License].  
-© Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)
+Copyright (c) 2025 Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)
