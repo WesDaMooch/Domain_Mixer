@@ -2,7 +2,7 @@
 
 <br>
 
-> The M4L device in this repository is not Frozen. If you intend to use the effect in Ableton Live, please download the device from the official Max for Live website (https://maxforlive.com//library/device.php?id=13115) to avoid conflicts with different versions. As this is the development branch, the device may not function as intended.
+> The M4L device in this repository is not Frozen. If you intend to use the effect in Ableton Live, please download the device from the official Max for Live website (https://maxforlive.com/profile/user/WesDaMooch) to avoid conflicts with different versions. As this is the development branch, the device may not function as intended.
 
 <br>
 
