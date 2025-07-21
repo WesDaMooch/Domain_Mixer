@@ -32,4 +32,4 @@ The Domain Mixer is a Max for Live effect for Ableton Live 12. The device takes 
 
 ## License
 This project is licensed under the [MIT License].  
-© Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)
+Copyright (c) 2025 (wes.mm@outlook.com)
