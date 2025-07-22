@@ -6,7 +6,7 @@
 
 <br>
 <div align="center">
-  <img src="media/dm_banner_cropped.gif" alt="Demo" />
+  <img src="media/dm_cover.gif" alt="Domain Mixer GIF" />
 </div>
 <br>
 
