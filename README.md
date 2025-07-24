@@ -12,6 +12,8 @@
 
 ### Behaviour
 - [ ] Scope Mode – a feature that provides enhanced control and visualization for low-frequency modulators
+- [ ] Mix from Carrier to Modulator audio when external input is active
+- [ ] Button to clear Modulator buffer
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
 
