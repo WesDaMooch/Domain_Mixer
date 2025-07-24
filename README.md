@@ -20,6 +20,8 @@ The Domain Mixer is a Max for Live effect for Ableton Live 12. The device takes 
 
 ### Behaviour
 - [ ] Scope Mode – a feature that provides enhanced control and visualization for low-frequency modulators
+- [ ] Mix from Carrier to Modulator audio when external input is active
+- [ ] Button to clear Modulator buffer
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
 
