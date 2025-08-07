@@ -23,7 +23,7 @@ var COLOURS = {
     LCDline: [1.000, 1.000, 1.000, 0.459], 
     LCDtext: [1.000, 1.000, 1.000, 0.459],  
 
-    Dialticks: [0, 0, 0, 0]
+    Dialticks: [1, 0, 1, 0]
 };
 
 // Text Style
@@ -32,6 +32,9 @@ var text_size = 9.5;
 
 // Default samplerate
 var sr = 48000; 
+
+// Curve dial ticks
+var curve_offset = 0;
 
 function paint() {
     with (mgraphics) {
@@ -59,7 +62,7 @@ function paint() {
 
         var d2_x = 308 + (dial_size * 0.5);
         var d2_y = 52 + (dial_size * 0.5);
-        drawDialTicks(d2_x, d2_y, i_r, o_r, ticks, "Curve")
+        drawCurveDialTicks(d2_x, d2_y, i_r, o_r, ticks, "Curve")
 
         var d3_x = 260 + (dial_size * 0.5);
         var d3_y = 104 + (dial_size * 0.5);
@@ -174,6 +177,60 @@ function drawLCD(x, y, width, height) {
     }
 }
 
+function drawCurveDialTicks(x, y, inner_radius, outer_radius, num_ticks, name) {
+    with (mgraphics) {
+
+        // Ticks
+        set_line_width(1);
+        set_source_rgba(COLOURS.Dialticks);
+
+        var ndegrees = 270;
+        var arc_start = (270 - ndegrees * 0.5) * (2 * Math.PI / 360);
+        var arc_end = (270 + ndegrees * 0.5) * (2 * Math.PI / 360);
+
+        for (var i = 0; i < num_ticks; i++) {
+            var t = i / (num_ticks - 1);
+            var angle = arc_start + t * (arc_end - arc_start);
+
+            // Tick endpoints along radial
+            var x1 = x + inner_radius * Math.cos(angle);
+            var y1 = y + inner_radius * Math.sin(angle);
+            var x2 = x + outer_radius * Math.cos(angle);
+            var y2 = y + outer_radius * Math.sin(angle);
+
+            // Mid
+            var mx = (x1 + x2) / 2;
+            var my = (y1 + y2) / 2;
+
+            var dx = x2 - x1;
+            var dy = y2 - y1;
+
+            var length = Math.sqrt(dx * dx + dy * dy);
+            var nx = -dy / length;
+            var ny = dx / length;
+
+            var cx = mx + curve_offset * nx;
+            var cy = my + curve_offset * ny;
+
+            move_to(x1, y1);
+            curve_to(cx, cy, cx, cy, x2, y2);
+            stroke();
+        }
+
+        // Title
+        select_font_face(text_font);
+        set_font_size(text_size);
+        set_source_rgba(COLOURS.Dialticks);
+
+        var name_pad = 3;
+        name_measure = text_measure(name);
+
+        move_to(x - (name_measure[0] * 0.5), y - outer_radius - name_pad);
+        show_text(name);
+    }
+}
+
+
 function drawDialTicks(x, y, inner_radius, outer_radius, num_ticks, name) {
     with (mgraphics) {
 
@@ -212,6 +269,7 @@ function drawDialTicks(x, y, inner_radius, outer_radius, num_ticks, name) {
     }
 }
 
+
 function setSamplerate(new_sr) {
     sr = new_sr;
     mgraphics.redraw()
@@ -224,6 +282,11 @@ function setLCDBackgroundColour(r, g, b, a) {
 
 function setDialTickColour(r, g, b, a) {
     COLOURS.Dialticks = [r, g, b, a];
+    mgraphics.redraw();
+}
+
+function setCurve(c) {
+    curve_offset = c * 2;
     mgraphics.redraw();
 }
 
