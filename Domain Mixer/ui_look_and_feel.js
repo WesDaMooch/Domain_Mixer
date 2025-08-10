@@ -19,11 +19,12 @@ mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 
 var COLOURS = {
+    background: [0, 0, 0, 0],
     LCDbackground: [0, 0, 0, 0],
     LCDline: [1.000, 1.000, 1.000, 0.459], 
     LCDtext: [1.000, 1.000, 1.000, 0.459],  
 
-    Dialticks: [1, 0, 1, 0]
+    Dialticks: [0, 0, 0, 0]
 };
 
 // Text Style
@@ -41,6 +42,11 @@ function paint() {
 
         var input_button_size = 35;
         var horizontal_pad = 5;
+
+        // Draw background
+        //set_source_rgba(COLOURS.background);
+        //rectangle(0, 0, 342, 169);
+        //fill();
 
         // Draw LCD background
         var LCD_x = (horizontal_pad * 2) + input_button_size;
@@ -275,8 +281,20 @@ function setSamplerate(new_sr) {
     mgraphics.redraw()
 }
 
+function setBackgroundColour(r, g, b, a) {
+    // Remove
+    COLOURS.background = [r, g, b, a];
+    mgraphics.redraw();
+}
+
 function setLCDBackgroundColour(r, g, b, a) {
     COLOURS.LCDbackground = [r, g, b, a];
+    mgraphics.redraw();
+}
+
+function setLCDTextColour(r, g, b, a) {
+    COLOURS.LCDline = [r, g, b, a];
+    COLOURS.LCDtext = [r, g, b, a];
     mgraphics.redraw();
 }
 
@@ -286,7 +304,7 @@ function setDialTickColour(r, g, b, a) {
 }
 
 function setCurve(c) {
-    curve_offset = c * 2;
+    curve_offset = c * 1.5;
     mgraphics.redraw();
 }
 
