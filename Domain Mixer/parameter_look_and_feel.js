@@ -8,8 +8,8 @@
 // -----------------------------------------------------------------------------
 //
 // Domain Mixer Parameter Look and Feel
-// Version:     BETAv1.0
-// Created:     18/07/2025
+// Version:     1.1
+// Created:     11/08/2025
 //
 // TSKWQLTUAD
 

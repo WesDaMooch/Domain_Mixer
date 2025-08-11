@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1138.0, 39.241671293973923, 374.0, 172.0 ],
-					"text" : "Copyright 2025 Wesley Lawrence Leggo-Morrell\n\nAuthor: Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)\n\nLicensed under the MIT License. See LICENSE file or\nhttps://opensource.org/licenses/MIT for information.\n\n-----------------------------------------------------------------------------\n\nDomain Mixer pfft Subpatch\nVersion:     BETAv1.0\nCreated:    18/07/2025"
+					"text" : "Copyright 2025 Wesley Lawrence Leggo-Morrell\n\nAuthor: Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)\n\nLicensed under the MIT License. See LICENSE file or\nhttps://opensource.org/licenses/MIT for information.\n\n-----------------------------------------------------------------------------\n\nDomain Mixer pfft Subpatch\nVersion:     1.1\nCreated:    11/08/2025"
 				}
 
 			}

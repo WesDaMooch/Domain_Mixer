@@ -8,8 +8,8 @@
 // -----------------------------------------------------------------------------
 //
 // Domain Mixer UI Look and Feel
-// Version:     BETAv1.0
-// Created:     18/07/2025
+// Version:     1.1
+// Created:     11/08/2025
 //
 // TSKWQLTUAD
 
@@ -304,7 +304,7 @@ function setDialTickColour(r, g, b, a) {
 }
 
 function setCurve(c) {
-    curve_offset = c * 1.5;
+    curve_offset = c * 2;
     mgraphics.redraw();
 }
 

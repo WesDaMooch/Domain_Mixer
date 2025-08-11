@@ -1,8 +1,23 @@
+// Copyright 2025 Wesley Lawrence Leggo-Morrell
+//
+// Author: Wesley Lawrence Leggo-Morrell (wes.mm@outlook.com)
+//
+// Licensed under the MIT License. See LICENSE file or
+// https://opensource.org/licenses/MIT for information.
+//
+// -----------------------------------------------------------------------------
+//
+// Domain Mixer Themes
+// Version:     1.1
+// Created:     11/08/2025
+//
+// TSKWQLTUAD
+
+// Could put in ui look and feel
+
 // Inlets and outlets
 inlets = 1;
 outlets = 12;
-
-// Could put in ui laf
 
 var THEMES = {
     LIVE: {
