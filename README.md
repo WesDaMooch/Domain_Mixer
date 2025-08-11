@@ -8,22 +8,24 @@
 
 ## Proposed Updates
 ### UI
-  - [ ] Custom themes
+  - [x] Custom themes
 
 ### Behaviour
 - [ ] Scope Mode – a feature that provides enhanced control and visualization for low-frequency modulators
-- [ ] Mix from Carrier to Modulator audio when external input is active (redundante?)
-- [ ] Button to clear Modulator buffer (redundante?)
+- [ ] Button to clear Modulator buffer
 - [ ] More Curve options
 - [ ] Bespoke soft/hard clipping
 - [ ] Improve CPU performance
 
 ### Bug Fixes
-- [ ] Hide Channel Display parameter from Live
 
 <br>
 
 ## Change Log
+### [v1.1] - 11/08/2025
+- Add custom themes
+- Improved Curve UI
+- General bug fixes
 
 ### [BETAv1.0] - 18/07/2025
 - Beta goes live.
