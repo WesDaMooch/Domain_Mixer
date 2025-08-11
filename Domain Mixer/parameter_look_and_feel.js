@@ -8,8 +8,8 @@
 // -----------------------------------------------------------------------------
 //
 // Domain Mixer Parameter Look and Feel
-// Version:     BETAv1.0
-// Created:     18/07/2025
+// Version:     1.1
+// Created:     11/08/2025
 //
 // TSKWQLTUAD
 
@@ -19,7 +19,8 @@ var COLOURS = {
     slider_bar: box.getattr("textcolor"),
     slider_border: box.getattr("textcolor"),
 
-    slider_LCDtext: [1.000, 1.000, 1.000, 0.459],
+    //slider_LCDtext: [1.000, 1.000, 1.000, 0.459],
+    slider_LCDtext: box.getattr("trioncolor"),
 
     // Text gradient
     grad1: box.getattr("slidercolor"),
